@@ -8,9 +8,7 @@
 
 	- Avoid color coding  
 
-	- Don't use color-specific instructions  
-
-        This is especially important for error states.  
+	- Don't use color-specific instructions  (this is especially important for error states.)  
 
 	- Links should be indicated with more than color, such as underlining.  
 

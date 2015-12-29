@@ -15,7 +15,7 @@
   		<script src="//use.typekit.net/qhd5ixe.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
 
-    	<title>Studio Science Front-End Development Standard</title>
+    	<title>Studio Science Accessibility Standard</title>
 
     </head>
 
@@ -57,10 +57,10 @@
 </a>        	<nav class="main-nav" role="navigation">
 	<ul class="nav">
 		<li>
-			<a href="#Design">Design</a>
+			<a href="#design">Design</a>
 		</li>
 		<li>
-			<a href="#Development">Development</a>
+			<a href="#development">Development</a>
 		</li>
 	</ul>
 </nav>
@@ -77,7 +77,7 @@
 
 <p>Documented here are the standards for accessibility in front-end design and development used by <a href="http://studioscience.com">Studio Science</a>.</p>
 
-<section id="Design">
+<section>
     <h2 id="design">Design</h2>
 
 <h3 id="checklist">Checklist</h3>
@@ -89,9 +89,7 @@
 
 <ul>
 <li><p>Avoid color coding </p></li>
-<li><p>Don&#8217;t use color-specific instructions </p>
-
-<p>This is especially important for error states. </p></li>
+<li><p>Don&#8217;t use color-specific instructions (this is especially important for error states.) </p></li>
 <li><p>Links should be indicated with more than color, such as underlining. </p></li>
 </ul></li>
 <li><p>Contrast reaches the minimum ratio of 4.5:1 </p>
@@ -117,7 +115,7 @@
 </ul>
 </section>
 
-<section id="Development">
+<section>
     <h2 id="development">Development</h2>
 
 <h3 id="landmarks">Landmarks</h3>
@@ -232,7 +230,9 @@ A useful solution may be to use the same state on <code>:focus</code> as used on
 <li><p>Use unobtrusive Javascript (never use inline scripting). </p>
 
 <p>Unobtrusive JavaScript means the site and content should still be accessible with JavaScript disabled. JavaScript should be added in the spirit of Progressive Enhancement.</p></li>
-<li><p>Provide fallbacks for users with JavaScript disabled.</p></li>
+<li><p>Provide fallbacks for users with JavaScript disabled. </p>
+
+<p>This is especially important for interactions, such as those using the <code>slideToggle()</code> method.</p></li>
 </ul>
 
 <h3 id="forms">Forms</h3>
@@ -270,6 +270,15 @@ An exception to this rule would be smaller forms with one or two fields (eg. sea
 <li>Provide text transcripts</li>
 <li>Synchronized subtitles for videos</li>
 </ul>
+
+<pre><code class="language-markup">&lt;video class="readable" poster="your-video-poster.jpg" controls tabindex="0" title="My Video"&gt;
+    &lt;source  src="your-video.m4v" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /&gt;
+    &lt;source  src="your-video.ogg" type='application/ogg' /&gt;
+    &lt;source  src="your-video.webm" type='video/webm' /&gt;
+    &lt;track src="your-video-transcript.vtt" label="English Captions" kind="subtitles" srclang="en-us" default /&gt;
+&lt;/video&gt;
+</code>
+</pre>
 
 <p>Visit <a href="http://a11yproject.com/posts/using-caption-services-with-html5-video/">the A11Y Project</a> for more information.</p>
 

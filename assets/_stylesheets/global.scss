@@ -42,17 +42,34 @@ a {
 }
 
 .quote {
-    margin-left: rem(40);
+    padding-left: rem(20);
+    border-left: 2px solid #8bb74f;
 
     blockquote {
         margin-left: 0;
+
+        p {
+            padding-left: 0;
+        }
     }
 
     .quote-attribution {
+        color: #929292;
 
         &::before {
             content: "—";
         }
+    }
+}
+
+blockquote{
+    margin-left: 0;
+    color: #929292;
+
+    p {
+        margin-left: 0;
+        padding-left: 20px;
+        border-left: 2px solid #8bb74f;
     }
 }
 

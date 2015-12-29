@@ -586,11 +586,24 @@ a {
     color: #8bb74f; }
 
 .quote {
-  margin-left: 2.5rem; }
+  padding-left: 1.25rem;
+  border-left: 2px solid #8bb74f; }
   .quote blockquote {
     margin-left: 0; }
-  .quote .quote-attribution::before {
-    content: "—"; }
+    .quote blockquote p {
+      padding-left: 0; }
+  .quote .quote-attribution {
+    color: #929292; }
+    .quote .quote-attribution::before {
+      content: "—"; }
+
+blockquote {
+  margin-left: 0;
+  color: #929292; }
+  blockquote p {
+    margin-left: 0;
+    padding-left: 20px;
+    border-left: 2px solid #8bb74f; }
 
 pre {
   padding: 1em;

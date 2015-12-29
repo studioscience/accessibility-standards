@@ -112,7 +112,9 @@ A useful solution may be to use the same state on <code>:focus</code> as used on
 <li><p>Use unobtrusive Javascript (never use inline scripting). </p>
 
 <p>Unobtrusive JavaScript means the site and content should still be accessible with JavaScript disabled. JavaScript should be added in the spirit of Progressive Enhancement.</p></li>
-<li><p>Provide fallbacks for users with JavaScript disabled.</p></li>
+<li><p>Provide fallbacks for users with JavaScript disabled. </p>
+
+<p>This is especially important for interactions, such as those using the <code>slideToggle()</code> method.</p></li>
 </ul>
 
 <h3 id="forms">Forms</h3>
@@ -150,6 +152,15 @@ An exception to this rule would be smaller forms with one or two fields (eg. sea
 <li>Provide text transcripts</li>
 <li>Synchronized subtitles for videos</li>
 </ul>
+
+<pre><code class="language-markup">&lt;video class="readable" poster="your-video-poster.jpg" controls tabindex="0" title="My Video"&gt;
+    &lt;source  src="your-video.m4v" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /&gt;
+    &lt;source  src="your-video.ogg" type='application/ogg' /&gt;
+    &lt;source  src="your-video.webm" type='video/webm' /&gt;
+    &lt;track src="your-video-transcript.vtt" label="English Captions" kind="subtitles" srclang="en-us" default /&gt;
+&lt;/video&gt;
+</code>
+</pre>
 
 <p>Visit <a href="http://a11yproject.com/posts/using-caption-services-with-html5-video/">the A11Y Project</a> for more information.</p>
 
