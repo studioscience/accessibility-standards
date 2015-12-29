@@ -36,7 +36,8 @@ a {
     color: $lightgray;
     @include transition(color 0.2s ease-out);
 
-    &:hover {
+    &:hover,
+    &:focus {
         color: $green;
     }
 }
@@ -54,7 +55,7 @@ a {
     }
 
     .quote-attribution {
-        color: #929292;
+        color: #767676;
 
         &::before {
             content: "—";
@@ -64,7 +65,7 @@ a {
 
 blockquote{
     margin-left: 0;
-    color: #929292;
+    color: #767676;
 
     p {
         margin-left: 0;
