@@ -561,7 +561,7 @@ textarea {
   font-family: "effra",sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: #656565; }
+  color: #444; }
 
 h1,
 h3 {
@@ -578,11 +578,11 @@ h3 {
   margin: 1.2631578947em 0 0; }
 
 a {
-  color: #929292;
+  color: #767676;
   -webkit-transition: color 0.2s ease-out;
   -moz-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out; }
-  a:hover {
+  a:hover, a:focus {
     color: #8bb74f; }
 
 .quote {
@@ -593,13 +593,13 @@ a {
     .quote blockquote p {
       padding-left: 0; }
   .quote .quote-attribution {
-    color: #929292; }
+    color: #767676; }
     .quote .quote-attribution::before {
       content: "—"; }
 
 blockquote {
   margin-left: 0;
-  color: #929292; }
+  color: #767676; }
   blockquote p {
     margin-left: 0;
     padding-left: 20px;
@@ -652,7 +652,7 @@ a.logo {
   -webkit-transition: opacity 0.2s ease-out;
   -moz-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out; }
-  a.logo:hover {
+  a.logo:hover, a.logo:focus {
     opacity: 0.8; }
 
 svg.logo {
@@ -671,10 +671,10 @@ nav[role="navigation"] {
     font-family: "effra",sans-serif;
     font-style: normal;
     font-weight: 400;
-    color: #656565;
+    color: #444;
     text-decoration: none;
     border-top: solid 1px rgba(0, 0, 0, 0.1); }
-    nav[role="navigation"] a:hover {
+    nav[role="navigation"] a:hover, nav[role="navigation"] a:focus {
       color: #8bb74f; }
   nav[role="navigation"] li.active a {
     color: #8bb74f; }

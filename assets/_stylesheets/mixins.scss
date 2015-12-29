@@ -1,6 +1,6 @@
 $green: #8bb74f;
-$gray: #656565;
-$lightgray: #929292;
+$gray: #444;
+$lightgray: #767676;
 
 @mixin bp($point) {
     @if $point == 700up {
