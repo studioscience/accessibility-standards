@@ -1,0 +1,15 @@
+$green: #8bb74f;
+$gray: #656565;
+$lightgray: #929292;
+
+@mixin bp($point) {
+    @if $point == 700up {
+        @media (min-width: em(700)) { @content; }
+    }
+    @else if $point == 820up {
+        @media (min-width: em(820)) { @content; }
+    }
+    @else if $point == 960up {
+        @media (min-width: em(960)) { @content; }
+    }
+}

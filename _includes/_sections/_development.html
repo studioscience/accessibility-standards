@@ -1,0 +1,171 @@
+<h2 id="development">Development</h2>
+
+<h3 id="landmarks">Landmarks</h3>
+
+<p>ARIA Landmark Roles are helpful landmarks that can be used by Assistive Technologies to navigate a website.</p>
+
+<ul>
+<li><p><code>&lt;header role=&quot;banner&quot;&gt;</code> </p>
+
+<blockquote>
+<p>“A region that contains mostly site-oriented content, rather than page-specific content.” </p>
+</blockquote>
+
+<p>Generally the page header. Used only once per page. </p></li>
+<li><p><code>&lt;nav role=&quot;navigation&quot;&gt;</code> </p>
+
+<blockquote>
+<p>“A collection of navigational elements (usually links) for navigating the document or related documents.” </p>
+
+<p>“User agents SHOULD treat elements with the role of navigation as navigational landmarks.” </p>
+</blockquote></li>
+<li><p><code>&lt;main role=&quot;main&quot;&gt;</code> </p>
+
+<blockquote>
+<p>“The main content of a document.” </p>
+</blockquote>
+
+<p>Used only once. </p></li>
+<li><p><code>&lt;article role=&quot;article&quot;&gt;</code> </p>
+
+<blockquote>
+<p>“A section of a page that consists of a composition that forms an independent part of a document, page, or site.” </p>
+</blockquote>
+
+<p>Do not place articles within articles. </p></li>
+<li><p><code>&lt;aside role=&quot;complementary&quot;&gt;</code> </p>
+
+<blockquote>
+<p>“A supporting section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.” </p>
+</blockquote></li>
+<li><p><code>&lt;footer role=&quot;contentinfo&quot;&gt;</code> </p>
+
+<blockquote>
+<p>“A large perceivable region that contains information about the parent document.” </p>
+</blockquote></li>
+<li><p><code>&lt;form role=&quot;search&quot;&gt;</code> </p>
+
+<blockquote>
+<p>“A landmark region that contains a collection of items and objects that, as a whole, combine to create a search facility.” </p>
+</blockquote>
+
+<p>Used on search forms. </p></li>
+</ul>
+
+<h3 id="languageattribute">Language Attribute</h3>
+
+<p>Declaring a language attribute on the html element enables a screen reader to read out the text with correct pronunciation. </p>
+
+<pre><code class="language-markup">&lt;html lang="en"&gt;
+</code></pre>
+
+<p>Specify a language with the <code>lang</code> attribute on the <code>&lt;html&gt;</code> element.</p>
+
+<h3 id="documentoutline">Document Outline</h3>
+
+<p>Use semantic headings and structure </p>
+
+<blockquote>
+<p>&#8220;Sections may contain headings of any rank, and authors are strongly encouraged to use headings of the appropriate rank for the section&#8217;s nesting level&#8221;</p>
+</blockquote>
+
+<p>Sections nested one level may begin with a <code>h2</code> heading, while top-level sections should begin with <code>h1</code> headings. To the extent possible, the headings should represent an accurate outline of the content.</p>
+
+<h3 id="links">Links</h3>
+
+<ul>
+<li><p>Ensure links have :focus state. </p>
+
+<p>If content changes on mouse hover, the same should occur on keyboard focus.
+A useful solution may be to use the same state on <code>:focus</code> as used on <code>:hover</code></p></li>
+<li><p>Ensure links are recognizable, especially to the colorblind. </p>
+
+<p>In general, this means using styles beyond color alone (such as underlining) to identify links.</p></li>
+</ul>
+
+<h3 id="images">Images</h3>
+
+<ul>
+<li>Use appropriate alt text on all images.</li>
+</ul>
+
+<h3 id="svgelementsandariaroles">SVG elements and ARIA roles</h3>
+
+<ul>
+<li><p>Use <code>role=&quot;img&quot;</code> on SVG elements to identify them as graphics. </p></li>
+<li><p>Give <code>title</code> and <code>description</code> elements <code>id</code>s and use an <code>aria-labelledby</code> attribute to reference the id values to provide accessible name and description. </p></li>
+<li><p>Add <code>role=&quot;presentation&quot;</code> to elements inside the SVG, such as <code>circle</code>, <code>path</code>, &amp;c. </p></li>
+</ul>
+
+<p>An example is provided below: </p>
+
+<pre><code class="language-markup">&lt;svg xmlns=http://www.w3.org/2000/svg role="img" aria-labelledby="title desc"&gt;
+    &lt;title id="title"&gt;Circle&lt;/title&gt;
+    &lt;desc id="desc"&gt;Blue circle with black border&lt;/desc&gt;
+    &lt;circle role="presentation" cy="60" r="55" stroke="black" stroke-width="1" fill="blue" /&gt;
+&lt;/svg&gt;
+</code></pre>
+
+<h3 id="javascript">Javascript</h3>
+
+<ul>
+<li><p>Use unobtrusive Javascript (never use inline scripting). </p>
+
+<p>Unobtrusive JavaScript means the site and content should still be accessible with JavaScript disabled. JavaScript should be added in the spirit of Progressive Enhancement.</p></li>
+<li><p>Provide fallbacks for users with JavaScript disabled.</p></li>
+</ul>
+
+<h3 id="forms">Forms</h3>
+
+<ul>
+<li><p>Logical layout
+Tab order of the form follows a logical pattern.</p></li>
+<li><p>Associated label for all form controls (e.g. input, select etc.)
+<code>&lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;&lt;input id=&quot;name&quot; type=&quot;text&quot;&gt;</code></p></li>
+<li><p>Make sure placeholder attributes are NOT being used in place of label tags.
+An exception to this rule would be smaller forms with one or two fields (eg. search or log in forms)</p></li>
+<li><p>Group related form elements with fieldset and describe the group with legend </p>
+
+<p>Important for <code>&lt;input type=&quot;radio&quot;&gt;</code> and <code>&lt;input type=&quot;checkbox&quot;&gt;</code> </p></li>
+</ul>
+
+<pre><code class="language-markup">&lt;fieldset&gt;
+    &lt;legend&gt;Output format&lt;/legend&gt;
+    &lt;div&gt;
+        &lt;input type="radio" name="format" id="txt" value="txt" checked&gt;
+        &lt;label for="txt"&gt;Text file&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="radio" name="format" id="csv" value="csv"&gt;
+        &lt;label for="csv"&gt;CSV file&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+</code></pre>
+
+<h3 id="mediaaudioandvideo">Media (Audio and Video)</h3>
+
+<p>Text alternatives make the audio information accessible to people who are deaf or hard of hearing, as well as search engines.</p>
+
+<ul>
+<li>Provide text transcripts</li>
+<li>Synchronized subtitles for videos</li>
+</ul>
+
+<p>Visit <a href="http://a11yproject.com/posts/using-caption-services-with-html5-video/">the A11Y Project</a> for more information.</p>
+
+<h3 id="alttext"><code>alt</code> text</h3>
+
+<ul>
+<li><p>Provide the alt attribute for images used as content to describe the function of the image (alt text is rarely detailed description). </p></li>
+<li><p>Descriptions should be useful, i.e., &#8220;company name&#8221;, not &#8220;logo&#8221;. </p></li>
+<li><p>Image links should describe where they go, not the image itself. </p></li>
+<li><p>Use an empty alt attribute for decorative images, or images that not necessary for understanding the content of the page. </p></li>
+</ul>
+
+<h3 id="testing">Testing</h3>
+
+<ul>
+<li><p>Navigating your site using a range of tools, such as just the keyboard or a screen reader, will help you understand how a blind, low-vision, or limited-mobility user will experience it. </p></li>
+<li><p>Test using a screen reader </p></li>
+<li><p>Test using keyboard only </p></li>
+</ul>
