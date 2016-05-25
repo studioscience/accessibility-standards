@@ -13,4 +13,4 @@ Text alternatives make the audio information accessible to people who are deaf o
 </code>
 </pre>
 
-Visit [the A11Y Project](http://a11yproject.com/posts/using-caption-services-with-html5-video) for more information.
+Visit <a href="http://a11yproject.com/posts/using-caption-services-with-html5-video" title="The A11y Project" target="_blank">the A11Y Project</a> for more information.
